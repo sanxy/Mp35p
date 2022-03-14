@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Mp35p</string>
+    <string name="withdrawal">Withdrawal</string>
+    <string name="deposit">Deposit</string>
+    <string name="card_transfer">Transfer</string>
+    <string name="airtime">Airtime</string>
+    <string name="pay_bills">Paybill</string>
+    <string name="history">History</string>
+    <string name="wallet">Wallet</string>
+    <string name="check_account_balance">Balance</string>
+    <string name="disputes">Disputes</string>
+    <string name="services">Services</string>
+    <string name="data">Data</string>
+</resources>
