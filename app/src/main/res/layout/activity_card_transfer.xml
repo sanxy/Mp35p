@@ -9,19 +9,21 @@
     android:focusableInTouchMode="true"
     tools:context=".activities.CardTransferActivity">
 
+    <include layout="@layout/barrier_loader" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/back_airtime"
+            android:id="@+id/back_bank_transfer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="0dp"
             android:layout_marginBottom="10dp"
             android:drawableStart="@drawable/ic_baseline_arrow_back"
             android:drawablePadding="20dp"
@@ -29,7 +31,8 @@
             android:text="Back"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:fontFamily="@font/quick_sand_regular" />
 
     </LinearLayout>
 
@@ -38,9 +41,11 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:paddingBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
@@ -48,10 +53,35 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
-                android:text="Select Network"
+                android:text="Frequently used banks"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:fontFamily="@font/quick_sand_regular" />
+
+
+            <!--        <HorizontalScrollView-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:scrollbars="none">-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/frequent_bank_list_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!--        </HorizontalScrollView>-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:text="Select bank"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/quick_sand_regular" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -68,23 +98,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <Spinner
-                        android:id="@+id/spinner_select_service"
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/spinner_select_bank"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginStart="20dp"
-                        android:background="@android:color/transparent"
+                        android:layout_marginEnd="10dp"
+                        android:drawableEnd="@drawable/ic_down_arrow"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/select_bank"
                         android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:visibility="visible" />
+                        android:textSize="18sp"
+                        app:fontFamily="@font/quick_sand_regular" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="15dp"
-                        app:srcCompat="@drawable/ic_down_arrow" />
                 </FrameLayout>
 
 
@@ -96,10 +124,12 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
-                android:text="Input Phone Number"
+                android:text="Account number"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:fontFamily="@font/quick_sand_regular" />
+
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -113,7 +143,7 @@
                 app:cardElevation="0dp">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/edit_text_phone_number"
+                    android:id="@+id/account_number"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
@@ -121,52 +151,72 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="2dp"
                     android:background="@null"
-                    android:maxLength="11"
-                    android:hint="Phone Number"
-                    android:inputType="number" />
+                    android:hint="e.g 01637*****"
+                    android:inputType="numberDecimal"
+                    android:maxLength="10" />
 
             </androidx.cardview.widget.CardView>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_validated_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="2dp"
+                android:gravity="end"
+                android:text="validated name appears here"
+                android:textColor="#2C2C2E" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
-                android:text="Input Amount"
+                android:text="Enter Amount"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:fontFamily="@font/quick_sand_regular" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_amount"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
+                android:visibility="gone"
                 app:cardBackgroundColor="#0A071854"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="0dp">
+
 
                 <com.cottacush.android.currencyedittext.CurrencyEditText
                     android:id="@+id/edit_text_amount"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    app:maxNumberOfDecimalDigits="2"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="2dp"
+                    app:currencySymbol="₦"
+                    app:useCurrencySymbolAsHint="true"
                     android:background="@null"
                     android:hint="Amount"
-                    android:inputType="numberDecimal" />
-
+                    android:inputType="numberDecimal"
+                    app:maxNumberOfDecimalDigits="2" />
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/vtu_send_now"
+                android:id="@+id/bank_transfer_send_now"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginStart="10dp"
@@ -184,22 +234,23 @@
 
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/validate_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="0.5"
                         android:padding="10dp"
-                        android:text="Proceed"
+                        android:text="Send now"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-<!--                    <androidx.appcompat.widget.AppCompatImageView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_gravity="center"-->
-<!--                        app:srcCompat="@drawable/ic_arrow_forward_white" />-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_baseline_arrow_forward" />
 
 
                 </LinearLayout>
@@ -207,6 +258,7 @@
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
 
 

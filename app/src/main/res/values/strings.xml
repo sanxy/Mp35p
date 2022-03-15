@@ -11,4 +11,7 @@
     <string name="disputes">Disputes</string>
     <string name="services">Services</string>
     <string name="data">Data</string>
+    <string name="powered_by">Kolomoni by CintrustMFB</string>
+    <string name="select_bank">Select Bank</string>
+
 </resources>

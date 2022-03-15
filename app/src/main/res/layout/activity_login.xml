@@ -4,577 +4,209 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     android:fitsSystemWindows="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/container_login"
+    <!--    <include-->
+    <!--        layout="@layout/barrier_loader"/>-->
+
+    <LinearLayout
+        android:id="@+id/ll_login"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-<!--    <include-->
-<!--        layout="@layout/barrier_loader"/>-->
-
-<!--    <LinearLayout-->
-<!--        android:id="@+id/ll_login"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical">-->
-
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:fitsSystemWindows="true"-->
-<!--            android:focusable="true"-->
-<!--            android:focusableInTouchMode="true">-->
-
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:id="@+id/imageView"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:layout_gravity="center_horizontal"-->
-<!--                android:scaleType="fitXY"-->
-<!--                android:src="@drawable/ic_slants"-->
-<!--                android:visibility="gone"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:id="@+id/imageView2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="81dp"-->
-<!--                android:layout_gravity="start"-->
-<!--                app:cardBackgroundColor="@android:color/transparent"-->
-<!--                app:cardCornerRadius="16dp"-->
-<!--                app:cardElevation="0dp"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/imageView">-->
-
-<!--                <androidx.appcompat.widget.AppCompatImageView-->
-<!--                    android:id="@+id/imageView222"-->
-<!--                    android:layout_width="80dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_gravity="start"-->
-<!--                    android:src="@drawable/kolo_white_transparent" />-->
-
-<!--            </androidx.cardview.widget.CardView>-->
-
-<!--            <ScrollView-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="0dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:fillViewport="true"-->
-<!--                android:isScrollContainer="false"-->
-<!--                app:layout_constraintBottom_toTopOf="@+id/button_holder"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/imageView2">-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="vertical"-->
-<!--                    android:paddingLeft="20dp"-->
-<!--                    android:paddingTop="15dp"-->
-<!--                    android:paddingRight="20dp">-->
-
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginBottom="10dp"-->
-<!--                        android:orientation="vertical">-->
-<!--                        &lt;!&ndash;  Email Label &ndash;&gt;-->
-<!--                        <TextView-->
-<!--                            android:id="@+id/textView"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="0dp"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:text="E-mail"-->
-<!--                            android:textColor="#000"-->
-<!--                            android:textSize="18sp" />-->
-
-
-<!--                        <com.google.android.material.textfield.TextInputLayout-->
-<!--                            android:id="@+id/input_email"-->
-<!--                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_marginTop="3dp"-->
-<!--                            android:layout_marginBottom="8dp"-->
-<!--                            android:focusableInTouchMode="true"-->
-<!--                            android:textColorHint="#342815"-->
-<!--                            app:boxBackgroundColor="#40DFDFDF"-->
-<!--                            app:boxCornerRadiusBottomEnd="8dp"-->
-<!--                            app:boxCornerRadiusBottomStart="8dp"-->
-<!--                            app:boxCornerRadiusTopEnd="8dp"-->
-<!--                            app:boxCornerRadiusTopStart="8dp"-->
-<!--                            app:boxStrokeColor="#007AFF"-->
-<!--                            app:boxStrokeWidthFocused="2dp">-->
-
-<!--                            <com.google.android.material.textfield.TextInputEditText-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:inputType="textEmailAddress"-->
-<!--                                android:textColor="#342815"-->
-<!--                                android:textColorHint="#342815" />-->
-
-<!--                        </com.google.android.material.textfield.TextInputLayout>-->
-
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginBottom="5dp"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/password_text"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="0dp"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:text="Password"-->
-<!--                            android:textColor="#000"-->
-<!--                            android:textSize="18sp" />-->
-
-<!--                        &lt;!&ndash;  Password Label &ndash;&gt;-->
-<!--                        <com.google.android.material.textfield.TextInputLayout-->
-<!--                            android:id="@+id/input_password"-->
-<!--                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_marginTop="3dp"-->
-<!--                            android:layout_marginBottom="8dp"-->
-<!--                            android:textColorHint="#342815"-->
-<!--                            app:boxBackgroundColor="#40DFDFDF"-->
-<!--                            app:boxCornerRadiusBottomEnd="8dp"-->
-<!--                            app:boxCornerRadiusBottomStart="8dp"-->
-<!--                            app:boxCornerRadiusTopEnd="8dp"-->
-<!--                            app:boxCornerRadiusTopStart="8dp"-->
-<!--                            app:boxStrokeColor="#007AFF"-->
-<!--                            app:boxStrokeWidthFocused="2dp"-->
-<!--                            app:passwordToggleEnabled="true">-->
-
-<!--                            <com.google.android.material.textfield.TextInputEditText-->
-<!--                                android:id="@+id/password_show"-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:inputType="textPassword"-->
-<!--                                android:textColor="#342815"-->
-<!--                                android:textColorHint="#342815" />-->
-
-<!--                        </com.google.android.material.textfield.TextInputLayout>-->
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginBottom="20dp"-->
-<!--                        app:layout_constraintTop_toTopOf="@id/button_card">-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:id="@+id/recovery"-->
-<!--                            android:gravity="end"-->
-<!--                            android:fontFamily="@font/quick_sand_medium"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:paddingVertical="10dp"-->
-<!--                            android:layout_gravity="end"-->
-<!--                            android:text="@string/forgot_password"-->
-<!--                            android:textColor="@color/login_quick_access"-->
-<!--                            android:textSize="14sp" />-->
-
-<!--                    </LinearLayout>-->
-
-<!--                    <androidx.cardview.widget.CardView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="70dp"-->
-<!--                        app:cardCornerRadius="8dp"-->
-<!--                        app:cardElevation="0dp"-->
-<!--                        android:id="@+id/button_card">-->
-
-
-<!--                        <LinearLayout-->
-<!--                            style="@style/linear_layout_button_background">-->
-
-<!--                            <FrameLayout-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="match_parent">-->
-
-<!--                                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                                    android:id="@+id/second_login"-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:layout_gravity="start|center"-->
-<!--                                    android:padding="110dp"-->
-<!--                                    android:textColor="@color/qr_code_white"-->
-<!--                                    android:textSize="16sp"-->
-<!--                                    tools:text="Login" />-->
-
-
-<!--                                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                                    android:id="@+id/btn_login"-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:layout_gravity="center"-->
-
-<!--                                    android:drawablePadding="20dp"-->
-<!--                                    android:padding="10dp"-->
-<!--                                    android:text="Login"-->
-<!--                                    android:fontFamily="@font/quick_sand_bold"-->
-<!--                                    android:textAlignment="center"-->
-<!--                                    android:textColor="@color/qr_code_white"-->
-<!--                                    android:textSize="20sp"-->
-<!--                                    android:textStyle="bold" />-->
-
-<!--                                <androidx.appcompat.widget.AppCompatImageView-->
-<!--                                    android:id="@+id/line"-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:layout_gravity="center|end"-->
-<!--                                    android:layout_marginEnd="70dp"-->
-<!--                                    android:src="@drawable/ic_line" />-->
-
-<!--                                <androidx.appcompat.widget.AppCompatImageView-->
-<!--                                    android:id="@+id/bio_auth"-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:layout_gravity="center|end"-->
-<!--                                    android:layout_marginStart="16dp"-->
-<!--                                    android:layout_marginEnd="20dp"-->
-<!--                                    android:src="@drawable/ic_biometric" />-->
-<!--                            </FrameLayout>-->
-
-
-<!--                        </LinearLayout>-->
-
-<!--                    </androidx.cardview.widget.CardView>-->
-
-<!--                    &lt;!&ndash;            <View&ndash;&gt;-->
-<!--                    &lt;!&ndash;                android:id="@+id/view_color"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                android:layout_height="5dp"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                android:background="@drawable/login_button_shadow" />&ndash;&gt;-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="30dp"-->
-<!--                        android:layout_gravity="center"-->
-<!--                        android:gravity="center"-->
-<!--                        android:id="@+id/registerholder"-->
-<!--                        app:layout_constraintTop_toTopOf="@id/button_card">-->
-<!--                        <TextView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:fontFamily="@font/quick_sand_semibold"-->
-<!--                            android:gravity="center"-->
-<!--                            android:layout_marginEnd="5dp"-->
-<!--                            android:text="Don't have an account?"-->
-<!--                            android:textSize="14sp" />-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:id="@+id/link_signup"-->
-<!--                            android:gravity="center"-->
-<!--                            android:layout_marginLeft="5dp"-->
-<!--                            android:layout_gravity="end"-->
-<!--                            android:textColor="@color/text_orange"-->
-<!--                            android:fontFamily="@font/quick_sand_semibold"-->
-<!--                            android:text="@string/register_now"-->
-<!--                            android:textSize="14sp" />-->
-
-<!--                    </LinearLayout>-->
-<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="55dp"-->
-<!--                        android:orientation="horizontal">-->
-
-
-<!--                        <LinearLayout-->
-<!--                            android:id="@+id/ll_quick_access"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_marginTop="30dp"-->
-<!--                            android:orientation="vertical"-->
-<!--                            app:layout_constraintLeft_toLeftOf="parent"-->
-<!--                            app:layout_constraintRight_toRightOf="parent"-->
-<!--                            tools:ignore="MissingConstraints">-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="start"-->
-<!--                                android:paddingVertical="6dp"-->
-<!--                                android:textColor="#1C1C1E"-->
-<!--                                android:layout_marginBottom="10dp"-->
-<!--                                android:fontFamily="@font/quick_sand_bold"-->
-<!--                                android:text="Quick Access Menu"-->
-<!--                                android:textSize="16sp" />-->
-
-<!--                            <LinearLayout-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:orientation="horizontal"-->
-<!--                                android:layout_marginTop="10dp"-->
-<!--                                android:weightSum="4">-->
-
-<!--                                <androidx.cardview.widget.CardView-->
-<!--                                    android:id="@+id/login_cash_out"-->
-<!--                                    android:layout_width="0dp"-->
-<!--                                    android:layout_height="match_parent"-->
-<!--                                    android:layout_marginEnd="10dp"-->
-<!--                                    android:layout_weight="1"-->
-<!--                                    app:cardElevation="0dp"-->
-<!--                                    app:cardBackgroundColor="@android:color/transparent"-->
-<!--                                    app:cardCornerRadius="0dp">-->
-
-<!--                                    <LinearLayout-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="match_parent"-->
-<!--                                        android:orientation="vertical">-->
-
-<!--                                        <androidx.cardview.widget.CardView-->
-<!--                                            android:layout_width="80dp"-->
-<!--                                            android:layout_height="80dp"-->
-<!--                                            app:cardCornerRadius="40dp"-->
-<!--                                            app:cardElevation="4dp"-->
-<!--                                            android:visibility="gone"-->
-<!--                                            android:layout_marginTop="10dp"-->
-<!--                                            app:cardBackgroundColor="#DBF1D0"-->
-<!--                                            android:layout_gravity="center">-->
-
-<!--                                            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                                                android:layout_width="wrap_content"-->
-<!--                                                android:layout_height="wrap_content"-->
-<!--                                                android:layout_gravity="center"-->
-<!--                                                android:src="@drawable/cash_out_login" />-->
-
-<!--                                        </androidx.cardview.widget.CardView>-->
-
-<!--                                        <androidx.appcompat.widget.AppCompatImageView-->
-<!--                                            android:layout_width="wrap_content"-->
-<!--                                            android:layout_height="wrap_content"-->
-<!--                                            android:layout_gravity="center"-->
-<!--                                            android:src="@drawable/cash_out_login" />-->
-
-<!--                                        <TextView-->
-<!--                                            android:layout_width="match_parent"-->
-<!--                                            android:layout_height="wrap_content"-->
-<!--                                            android:gravity="center"-->
-<!--                                            android:paddingVertical="6dp"-->
-<!--                                            android:text="Cashout"-->
-<!--                                            android:textColor="@color/black"-->
-<!--                                            android:textSize="14sp"-->
-<!--                                            android:fontFamily="@font/quick_sand_bold" />-->
-<!--                                    </LinearLayout>-->
-
-<!--                                </androidx.cardview.widget.CardView>-->
-
-<!--                                <androidx.cardview.widget.CardView-->
-<!--                                    android:id="@+id/balance"-->
-<!--                                    android:layout_width="0dp"-->
-<!--                                    android:layout_height="match_parent"-->
-<!--                                    android:layout_marginEnd="10dp"-->
-<!--                                    android:layout_weight="1"-->
-<!--                                    app:cardElevation="0dp"-->
-<!--                                    app:cardBackgroundColor="@android:color/transparent"-->
-<!--                                    app:cardCornerRadius="0dp">-->
-
-<!--                                    <LinearLayout-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="match_parent"-->
-<!--                                        android:orientation="vertical">-->
-
-<!--                                        <androidx.cardview.widget.CardView-->
-<!--                                            android:layout_width="80dp"-->
-<!--                                            android:layout_height="80dp"-->
-<!--                                            app:cardCornerRadius="40dp"-->
-<!--                                            app:cardElevation="4dp"-->
-<!--                                            android:visibility="gone"-->
-<!--                                            android:layout_marginTop="10dp"-->
-<!--                                            app:cardBackgroundColor="#FFDEA4"-->
-<!--                                            android:layout_gravity="center">-->
-
-<!--                                            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                                                android:layout_width="wrap_content"-->
-<!--                                                android:layout_height="wrap_content"-->
-<!--                                                android:layout_gravity="center"-->
-<!--                                                android:src="@drawable/wallet_login" />-->
-
-<!--                                        </androidx.cardview.widget.CardView>-->
-
-<!--                                        <androidx.appcompat.widget.AppCompatImageView-->
-<!--                                            android:layout_width="wrap_content"-->
-<!--                                            android:layout_height="wrap_content"-->
-<!--                                            android:layout_gravity="center"-->
-<!--                                            android:src="@drawable/wallet_login" />-->
-
-<!--                                        <TextView-->
-<!--                                            android:layout_width="match_parent"-->
-<!--                                            android:layout_height="wrap_content"-->
-<!--                                            android:gravity="center"-->
-<!--                                            android:paddingVertical="6dp"-->
-<!--                                            android:text="Balance"-->
-<!--                                            android:textColor="@color/black"-->
-<!--                                            android:textSize="14sp"-->
-<!--                                            android:fontFamily="@font/quick_sand_bold" />-->
-<!--                                    </LinearLayout>-->
-
-<!--                                </androidx.cardview.widget.CardView>-->
-
-<!--                                <androidx.cardview.widget.CardView-->
-<!--                                    android:id="@+id/recharge"-->
-<!--                                    android:layout_width="0dp"-->
-<!--                                    android:layout_height="match_parent"-->
-<!--                                    android:layout_marginEnd="10dp"-->
-<!--                                    android:layout_weight="1"-->
-<!--                                    app:cardElevation="0dp"-->
-<!--                                    app:cardBackgroundColor="@android:color/transparent"-->
-<!--                                    app:cardCornerRadius="0dp">-->
-
-<!--                                    <LinearLayout-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="match_parent"-->
-<!--                                        android:orientation="vertical">-->
-
-<!--                                        <androidx.cardview.widget.CardView-->
-<!--                                            android:layout_width="80dp"-->
-<!--                                            android:layout_height="80dp"-->
-<!--                                            app:cardCornerRadius="40dp"-->
-<!--                                            app:cardElevation="4dp"-->
-<!--                                            android:visibility="gone"-->
-<!--                                            android:layout_marginTop="10dp"-->
-<!--                                            app:cardBackgroundColor="#DEE2FF"-->
-<!--                                            android:layout_gravity="center">-->
-
-<!--                                            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                                                android:layout_width="wrap_content"-->
-<!--                                                android:layout_height="wrap_content"-->
-<!--                                                android:layout_gravity="center"-->
-<!--                                                android:src="@drawable/smartphone_login" />-->
-
-<!--                                        </androidx.cardview.widget.CardView>-->
-
-<!--                                        <androidx.appcompat.widget.AppCompatImageView-->
-<!--                                            android:layout_width="wrap_content"-->
-<!--                                            android:layout_height="wrap_content"-->
-<!--                                            android:layout_gravity="center"-->
-<!--                                            android:src="@drawable/smartphone_login" />-->
-
-<!--                                        <TextView-->
-<!--                                            android:layout_width="match_parent"-->
-<!--                                            android:layout_height="wrap_content"-->
-<!--                                            android:gravity="center"-->
-<!--                                            android:paddingVertical="6dp"-->
-<!--                                            android:text="Recharge"-->
-<!--                                            android:textColor="@color/black"-->
-<!--                                            android:textSize="14sp"-->
-<!--                                            android:fontFamily="@font/quick_sand_bold" />-->
-<!--                                    </LinearLayout>-->
-
-<!--                                </androidx.cardview.widget.CardView>-->
-
-<!--                                <androidx.cardview.widget.CardView-->
-<!--                                    android:id="@+id/reset_device"-->
-<!--                                    android:layout_width="0dp"-->
-<!--                                    android:layout_height="match_parent"-->
-<!--                                    android:layout_marginEnd="10dp"-->
-<!--                                    android:layout_weight="1"-->
-<!--                                    app:cardElevation="0dp"-->
-<!--                                    app:cardBackgroundColor="@android:color/transparent"-->
-<!--                                    app:cardCornerRadius="0dp">-->
-
-<!--                                    <LinearLayout-->
-<!--                                        android:layout_width="match_parent"-->
-<!--                                        android:layout_height="match_parent"-->
-<!--                                        android:orientation="vertical">-->
-
-<!--                                        <androidx.cardview.widget.CardView-->
-<!--                                            android:layout_width="80dp"-->
-<!--                                            android:layout_height="80dp"-->
-<!--                                            app:cardCornerRadius="40dp"-->
-<!--                                            app:cardElevation="4dp"-->
-<!--                                            android:visibility="gone"-->
-<!--                                            android:layout_marginTop="10dp"-->
-<!--                                            app:cardBackgroundColor="#CFEED7"-->
-<!--                                            android:layout_gravity="center">-->
-
-<!--                                            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                                                android:layout_width="wrap_content"-->
-<!--                                                android:layout_height="wrap_content"-->
-<!--                                                android:layout_gravity="center"-->
-<!--                                                android:src="@drawable/reset_login" />-->
-
-<!--                                        </androidx.cardview.widget.CardView>-->
-
-<!--                                        <androidx.appcompat.widget.AppCompatImageView-->
-<!--                                            android:layout_width="wrap_content"-->
-<!--                                            android:layout_height="wrap_content"-->
-<!--                                            android:layout_gravity="center"-->
-<!--                                            android:src="@drawable/reset_login" />-->
-
-<!--                                        <TextView-->
-<!--                                            android:layout_width="match_parent"-->
-<!--                                            android:layout_height="wrap_content"-->
-<!--                                            android:gravity="center"-->
-<!--                                            android:paddingVertical="6dp"-->
-<!--                                            android:text="Reset"-->
-<!--                                            android:fontFamily="@font/quick_sand_bold"-->
-<!--                                            android:textColor="@color/black"-->
-<!--                                            android:textSize="14sp" />-->
-<!--                                    </LinearLayout>-->
-
-<!--                                </androidx.cardview.widget.CardView>-->
-
-
-<!--                            </LinearLayout>-->
-
-
-<!--                        </LinearLayout>-->
-
-
-<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--                </LinearLayout>-->
-
-<!--            </ScrollView>-->
-
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="start"-->
-<!--                android:src="@drawable/ic_kolo_trans"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--            <androidx.appcompat.widget.AppCompatTextView-->
-<!--                android:id="@+id/button_holder"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:padding="10dp"-->
-<!--                android:text="@string/powered_by"-->
-<!--                android:textAlignment="center"-->
-<!--                android:textColor="#333333"-->
-<!--                android:textSize="11sp"-->
-<!--                android:textStyle="bold"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-<!--    </LinearLayout>-->
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:fillViewport="true"
+                android:isScrollContainer="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="20dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical">
+                        <!--  Email Label -->
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:text="E-mail"
+                            android:textColor="#000"
+                            android:textSize="18sp" />
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/input_email"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="8dp"
+                            android:focusableInTouchMode="true"
+                            android:textColorHint="#342815"
+                            app:boxBackgroundColor="#40DFDFDF"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:boxCornerRadiusBottomStart="8dp"
+                            app:boxCornerRadiusTopEnd="8dp"
+                            app:boxCornerRadiusTopStart="8dp"
+                            app:boxStrokeColor="#007AFF"
+                            app:boxStrokeWidthFocused="2dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textEmailAddress"
+                                android:textColor="#342815"
+                                android:textColorHint="#342815" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/password_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:text="Password"
+                            android:textColor="#000"
+                            android:textSize="18sp" />
+
+                        <!--  Password Label -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/input_password"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="8dp"
+                            android:textColorHint="#342815"
+                            app:boxBackgroundColor="#40DFDFDF"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:boxCornerRadiusBottomStart="8dp"
+                            app:boxCornerRadiusTopEnd="8dp"
+                            app:boxCornerRadiusTopStart="8dp"
+                            app:boxStrokeColor="#007AFF"
+                            app:boxStrokeWidthFocused="2dp"
+                            app:passwordToggleEnabled="true">
 
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/password_show"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textPassword"
+                                android:textColor="#342815"
+                                android:textColorHint="#342815" />
 
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_view_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+
+
+                        <LinearLayout style="@style/linear_layout_button_background">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/btn_login"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:drawablePadding="20dp"
+                                    android:fontFamily="@font/quick_sand_bold"
+                                    android:padding="10dp"
+                                    android:text="Login"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+
+                            </FrameLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/button_holder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:padding="10dp"
+                        android:text="@string/powered_by"
+                        android:textAlignment="center"
+                        android:textColor="#333333"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_kolo_trans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

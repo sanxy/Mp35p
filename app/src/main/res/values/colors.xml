@@ -9,4 +9,15 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_background">#C8C0AF</color>
     <color name="button_bg">#003399</color>
+    <color name="colorPrimary">#FFBB86FC</color>
+    <color name="colorPrimaryDark">#FF6200EE</color>
+
+    <color name="green_light">#F0F5F0</color>
+    <color name="red_light">#FFEBEA</color>
+    <color name="text_orange">#FF6600</color>
+    <color name="green">#34C759</color>
+    <color name="red">#FF3B30</color>
+    <color name="light_gray">#AAB8C2</color>
+    <color name="view_background">#F3F5F9</color>
+
 </resources>

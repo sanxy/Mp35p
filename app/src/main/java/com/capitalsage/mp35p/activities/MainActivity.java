@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 import com.capitalsage.mp35p.R;
 import com.capitalsage.mp35p.adapter.DashboardMenuAdapter;
 import com.capitalsage.mp35p.model.DashboardMenu;
+import com.capitalsage.mp35p.utils.ProfileParser;
+import com.capitalsage.mp35p.utils.Storage;
 
 import java.util.ArrayList;
 
@@ -22,12 +25,27 @@ public class MainActivity extends Activity {
     private static final String TAG = MainActivity.class.getSimpleName();
     ArrayList<DashboardMenu> dashboardMenus;
     RecyclerView recyclerViewMenu;
+    public static String ctmk;
+    public static String encmsk;
+    public static String encsk;
+    public static String encpk;
+    public static String clrmsk;
+    public static String clrsk;
+    public static String clrpk;
+
+    SharedPreferences sharedPreferences;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sharedPreferences = getSharedPreferences(Storage.SHARED_PREFS, MODE_PRIVATE);
+//        bankList = sharedPreferences.getString(Storage.BANK_LIST, "");
+
+//        Log.i(TAG, "bankList::: " + bankList);
+        Log.i(TAG, "config tid::: " + ProfileParser.configtid);
 
         recyclerViewMenu = findViewById(R.id.recycler_view_menu);
 
@@ -139,5 +157,6 @@ public class MainActivity extends Activity {
         }
 
     }
+
 
 }
